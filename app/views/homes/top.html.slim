@@ -1,0 +1,8 @@
+h1
+  | Homes#top
+p
+  | Find me in app/views/homes/top.html.erb
+- if logged_in?
+  = link_to 'Sign out', '/signout'
+- else
+  = link_to 'Githubアカウントでログイン', '/auth/github'
