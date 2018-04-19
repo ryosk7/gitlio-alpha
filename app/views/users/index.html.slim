@@ -1,0 +1,21 @@
+h1
+  | Users#index
+p
+  | Find me in app/views/users/index.html.erb
+
+p Follower_count
+  = @user.followers.count
+
+br
+
+p Following_count
+  = @user.followed_users.count
+
+- @user.recent_events.each do |event|
+.recent-activity
+  p.recent-activity-type
+    = event.event_type
+  p.recent-activity-repo
+    = event.repo
+  p.recent-activity-created-at
+    = event.created_at

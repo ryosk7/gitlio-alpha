@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
     user = User.find_by(provider: auth['provider'], uid: auth['uid']) || User.create_with_omniauth(auth)
     session[:user_id] = user.id
-    redirect_to users_index_path
+    redirect_to users_path
   end
 
   def destroy

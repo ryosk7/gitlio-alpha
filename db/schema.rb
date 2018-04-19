@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419124737) do
+ActiveRecord::Schema.define(version: 20180419154905) do
 
   create_table "followed_recent_events", force: :cascade do |t|
     t.string "event_type"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20180419124737) do
   create_table "followers", force: :cascade do |t|
     t.integer "user_id", limit: 8
     t.string "name"
-    t.string "follower_uid"
+    t.integer "follower_uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_followers_on_user_id"
@@ -68,11 +68,12 @@ ActiveRecord::Schema.define(version: 20180419124737) do
     t.string "name"
     t.string "provider"
     t.text "uid"
-    t.string "oauth_token"
+    t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_image"
     t.string "email"
+    t.string "login"
   end
 
 end
