@@ -1,0 +1,2 @@
+class FollowedRecentEvent < ApplicationRecord
+end
